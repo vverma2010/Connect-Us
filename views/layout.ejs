@@ -1,16 +1,27 @@
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Bangers&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+
+
+
         <title>
             <%= title %>
         </title>
         <link rel="stylesheet" href="/css/layout.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+
         <%- style %>
     </head>
 
     <body>
 
         <%- include('_header'); %>
-       <%- body %>
+
+        <main id="layout-main">
+            <%- body %>
+        </main>
+      
         <%- include('_footer'); %>
 
         <%- script %>

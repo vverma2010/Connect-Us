@@ -1,5 +1,6 @@
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
         <title>
             <%= title %>
         </title>
@@ -7,9 +8,17 @@
 
     <body>
 
-        <%- include('_header'); %> 
+        <!-- <%- include('_header'); %>  -->
         <h1>Connect-Us / <%= title %></h1>
-        <%- include('_footer'); %>
+        <!-- <%- include('_footer'); %> -->
+        <section id="feed-posts">
+            <h4>Posts</h4>
+            <form action="" id="new-post-form" method="POST">
+                <textarea name="content" id="" cols="30" rows="3" placeholder="Type Something.."></textarea>
+                <input type="submit" value="Post">
+            </form>
+
+        </section>
 
     </body>
 </html>

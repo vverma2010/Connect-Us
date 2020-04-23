@@ -1,0 +1,37 @@
+#footer
+{
+    background-color: grey;
+    width: 20%;
+    height: 50px;
+    text-align: justify;
+    font-family: 'Comic Neue', cursive;
+    margin-right: 0px;
+    float: left;
+}
+#foot
+{
+    margin-left: 20px;   
+}
+#menu
+{
+    width: 80%;
+    background-color: grey;
+    float: right;
+    text-align: justify;
+    height: 50px;
+    
+}
+
+#item
+{
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Comic Neue', cursive;
+}
+
+#item:hover
+{
+    color: darkturquoise;
+    text-decoration: deepskyblue;
+}

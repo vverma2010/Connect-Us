@@ -1,4 +1,11 @@
-body
-{
-    background-color: aqua;
-}
+body {
+  background-position: center;
+  background-size: cover; }
+
+h1 {
+  color: floralwhite;
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF; }
+
+p {
+  color: floralwhite;
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF; }

@@ -1,0 +1,38 @@
+#header{
+    display: flex;
+    margin-bottom: 0px;
+    // font-family: fantasy;\
+    font-family: 'Aclonica', sans-serif;
+    background-color: grey;
+    font-size: 30px;
+    justify-content:space-between;
+    
+
+}
+
+#list
+{
+    font-size: 20px;
+    padding: 0px;
+    font-family: 'Bangers', cursive;
+    margin-right: 5px;
+    color: black;
+    
+
+
+}
+#link{
+    text-decoration: none;
+    color: black;
+}
+
+#link:hover{
+    color: darkturquoise;
+    text-shadow: darkturquoise;
+    text-shadow: 2px;
+}
+#title
+{
+    margin-top: 15px;
+    margin-left: 5px;
+}

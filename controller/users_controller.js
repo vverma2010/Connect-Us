@@ -64,4 +64,12 @@ module.exports.create = function(req, res){
 module.exports.createSession = function(req, res){
 
     // TODO Later
+    return res.redirect('/');
+}
+
+module.exports.destroySession = function(req,res){
+
+    req.logout();
+
+    return res.redirect('/');
 }
