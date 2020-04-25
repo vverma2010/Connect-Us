@@ -7,17 +7,31 @@
     </head>
 
     <body>
-
-        <!-- <%- include('_header'); %>  -->
         <h1>Connect-Us / <%= title %></h1>
-        <!-- <%- include('_footer'); %> -->
         <section id="feed-posts">
             <h4>Posts</h4>
             <form action="/posts/newpost" id="new-post-form" method="POST">
                 <textarea name="content" cols="30" rows="3" placeholder="Type Something.."></textarea>
                 <input type="submit" value="Post">
             </form>
+            
 
+            <div id="post-list">
+
+                <ul>
+                    <% for(post of posts){ %>
+                        <li>
+                           <p>
+                            <%= post.content %>
+                            <br>
+                            <small>
+                                <%= post.user.name %>
+                            </small>
+                           </p>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
         </section>
 
     </body>
