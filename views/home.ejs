@@ -6,59 +6,34 @@
             <%= title %>
         </title>
     </head>
-
-    <body>
+     <body>
         <div id="content">
-        <h1>Connect-Us / <%= title %></h1>
-        <section id="feed-posts">
-            <% if(locals.user) {%>
-            <form action="/posts/newpost" id="new-post-form" method="POST">
-                <textarea name="content" cols="30" rows="3" placeholder="Type Something.." required></textarea>
-                <input id="post-submit" type="submit" value="Post">
-            </form>
-            <% } %>
-            <h2>Posts</h2>
-
-            <div id="post-list">
-
-                <ul>
-                    <% for(post of posts){ %>
-                        <li id="post">
-                           <p>
-                             <%= post.user.name %>
-                            <br>
-                            <small>
-                                <%= post.content %>
-                            </small>
-                           </p>
-                        </li>   
-                           
-                         <div id="post-comment-list">
-                                    <ul id="post" id="post-comment-<% post._id %>">
-                            <% for(comment of post.comments){ %>
-                                <p>
-                                    <%= comment.user.name %>
-                                    <br>
-                                    <small>
-                                        <%= comment.content%>
-                                    </small>
-                                </p>
-                            <% } %>
-                            <div id="post-comments">
-                                <% if(locals.user) { %>
-                                     <form action="/comments/newcomment" method="post">
-                                        <input type="text" name="content" placeholder="Type here to comment.." required>
-                                        <input type="hidden" name="hidden_id" value="<%= post._id%>">
-                                        <input type="submit" value="Add Comment">
-                                     </form>
-                                <% } %>
-                            </div>
-                         </ul>
-                     </div>      
-                    <% } %>
-                </ul>
-            </div>
-        </section>
+            <h1>Connect-Us / <%= title %></h1>
+            <section id="feed-posts">
+                <% if(locals.user) {%>
+                    <form action="/posts/newpost" id="new-post-form" method="POST">
+                        <textarea name="content" cols="30" rows="3" placeholder="Type Something.." required></textarea>
+                        <input id="post-submit" type="submit" value="Post">
+                    </form>
+                <% } %>
+                <h2>Posts</h2>
+                <div id="post-list">
+                    <ul>
+                        <% for(post of posts){ %>
+                             <!-- included code of post and comment section -->
+                            <%- include('_post') -%>
+                        <% } %>
+                    </ul>
+                </div>
+            </section>
+            <section id="user-friends">
+                <h3>Friends</h3>
+                <% for(u of all_users){ %>
+                    <p>
+                        <a href="/users/profile/<%= u.id%>"><%= u.name%></a>
+                    </p>
+                <% } %>    
+            </section>
         </div>
     </body>
 </html>

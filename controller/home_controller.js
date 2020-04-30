@@ -1,4 +1,5 @@
 const Post = require('../model/post');
+const User = require('../model/user');
 module.exports.home = function(req,res)
 {
     
@@ -16,14 +17,16 @@ module.exports.home = function(req,res)
         }
     })
     .exec(function(err,posts){
-        return res.render('home' , {
-            title: "Connect-Us | Home",
-            posts : posts
-        });
 
-    }) 
-    
-   
+        User.find({},function(err,users){
+
+            return res.render('home' , {
+                title: "Connect-Us | Home",
+                posts : posts,
+                all_users: users
+            });
+        });
+    });
 }
 
 //  module.exports.actionName = function(req,res){}

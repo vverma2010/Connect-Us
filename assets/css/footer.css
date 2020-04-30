@@ -26,3 +26,8 @@
 #item:hover {
   color: darkturquoise;
   text-decoration: deepskyblue; }
+
+footer {
+  position: auto;
+  bottom: 0;
+  width: 100%; }

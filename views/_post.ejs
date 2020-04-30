@@ -1,0 +1,31 @@
+<li id="post">
+    <p>
+        <% if(locals.user && locals.user.id == post.user.id) { %>
+            <small>
+                <a href="/posts/destroy/<%= post.id%>">Delete</a>
+            </small>
+        <% } %>
+        <br>
+        <%= post.user.name %>
+        <br>
+        <small>
+            <%= post.content %>
+        </small>
+    </p>
+    <div id="post-comment-list">
+        <ul id="post" id="post-comment-<% post._id %>">
+            <% for(comment of post.comments){ %>
+                <%- include('_comment') -%>
+            <% } %>
+            <div id="post-comments">
+                <% if(locals.user) { %>
+                    <form action="/comments/newcomment" method="post">
+                        <input type="text" name="content" placeholder="Type here to comment.." required>
+                        <input type="hidden" name="hidden_id" value="<%= post._id%>">
+                        <input type="submit" value="Add Comment">
+                    </form>
+                <% } %>
+            </div>
+        </ul>
+    </div> 
+</li>
