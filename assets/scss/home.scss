@@ -7,7 +7,14 @@ body
 
 #content
 {
+    margin: 10px;
+    display: flex;
     color: #09FBD3;
+
+    #feed-posts{
+        width: 70%;
+        padding: 10px;
+    }
 }
 
 ul
@@ -63,7 +70,8 @@ input[type="text"]
 
 textarea
 {
-    width: 80%;
+    resize: none;
+    width: 50%;
     height: 70px;
     background: #131419;
     border: none;
@@ -81,4 +89,11 @@ textarea
 #post-submit
 {
     width: 50px;
+}
+
+#user-friends{
+    width: 30%;
+    padding: 10px;
+    border-left: 1px solid #09FBD3;
+    height: 100vh;
 }
