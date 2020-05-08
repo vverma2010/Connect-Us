@@ -25,3 +25,13 @@
 #title {
   margin-top: 15px;
   margin-left: 5px; }
+
+#span {
+  width: 50px;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 3px;
+  float: right;
+  border-radius: 5px;
+  font-size: 20px;
+  background-image: linear-gradient(to bottom right, darkturquoise, #0a3233); }
