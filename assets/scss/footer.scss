@@ -1,6 +1,6 @@
 #footer
 {
-    background-color: grey;
+    background-color: transparent;
     width: 20%;
     height: 50px;
     text-align: justify;
@@ -11,12 +11,13 @@
 }
 #foot
 {
+    color: whitesmoke;
     margin-left: 20px;   
 }
 #menu
 {
     width: 80%;
-    background-color: grey;
+    background-color: transparent;
     float: right;
     text-align: justify;
     height: 50px;
@@ -27,7 +28,7 @@
 {
     padding: 10px;
     text-decoration: none;
-    color: black;
+    color: whitesmoke;
     font-family: 'Comic Neue', cursive;
 }
 

@@ -3,18 +3,22 @@
     margin-bottom: 0px;
     // font-family: fantasy;\
     font-family: 'Aclonica', sans-serif;
-    background-color: grey;
+    background-color: transparent;
     font-size: 30px;
     justify-content:space-between;
     
+    
 
+}
+.header-site{
+    background: url(../Logo/45417f04-4c87-4a18-8598-a82555a1aed1_200x200.png);
 }
 
 #list
 {
     font-size: 20px;
     padding: 0px;
-    font-family: 'Bangers', cursive;
+    font-family: 'Poppins', sans-serif;
     margin-right: 5px;
     color: black;
     
@@ -23,7 +27,7 @@
 }
 #link{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 #link:hover{
@@ -33,9 +37,28 @@
 }
 #title
 {
+    background-image: url(../Logo/45417f04-4c87-4a18-8598-a82555a1aed1_200x200.png);
     margin-top: 15px;
     margin-left: 5px;
-    
+}
+span:hover{
+    color: darkturquoise;
+    text-shadow: darkturquoise;
+    text-shadow: 2px;
+    cursor:pointer;
+}
+#connect
+{
+    background-clip: text;
+    background: linear-gradient(60deg, white,rgb(10, 50, 51));
+  -webkit-background-clip: text;
+   color: rgba(0,0,0,.2);
+}
+#connect:hover{
+    color: darkturquoise;
+    text-shadow: darkturquoise;
+    text-shadow: 2px;
+    cursor:pointer;
 }
 
 #span
@@ -48,6 +71,6 @@
     float: right;
     border-radius: 5px;
     font-size: 20px;
-    background-image: linear-gradient(to bottom right, darkturquoise,rgb(10, 50, 51));
+    background-image: linear-gradient(30deg,white, rgb(10, 50, 51));
 
 }
