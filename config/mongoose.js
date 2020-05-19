@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
+const URL = "mongodb+srv://mongoDB:mongo@12345@coder-cluster-ywewf.mongodb.net/test?retryWrites=true&w=majority";
 
-mongoose.connect('mongodb://localhost/ConnectUs_development');
+mongoose.connect(URL,{
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+});
 
 const db = mongoose.connection;
 
