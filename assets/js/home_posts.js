@@ -14,7 +14,11 @@
                     let newPost = newPostDom(data.data.post);
                     $('#posts-list-container>ul').prepend(newPost);
                     deletePost($('.delete-post-button',newPost));
-                     new Noty({
+                    // enable toggle like button functionality on the new post
+                    new ToggleLike($('.toggle-like-button',newPost)); 
+                    console.log(data.data.postID);
+                    new CommentClass(data.data.postID);
+                    new Noty({
                          theme: 'metroui',
                          text: "Post published!",
                          type: 'success',
@@ -43,21 +47,27 @@
                             <small>
                             ${ post.content}
                             </small>
+                            <br>
+                            <small>
+                                    <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${ post._id}&type=Post">
+                                    <i class="fas fa-thumbs-up"></i>0 Likes
+                                    </a>
+                            </small>
                         </p>
-                        <div id="post-comment-list">
-                            <ul id="post" id="post-comment-${ post._id }">
-                                
-                                <div id="post-comments">
-
-                                        <form action="/comments/newcomment" method="post">
-                                            <input type="text" name="content" placeholder="Type here to comment.." required>
-                                            <input type="hidden" name="hidden_id" value="${ post._id}">
-                                            <input type="submit" value="Add Comment">
-                                        </form>
-                                    
-                                </div>
-                            </ul>
-                        </div> 
+                        <div id="post-${ post._id}-comment-list">
+                        <ul >
+                            
+                            <div id="post-comments">
+                                <% if(locals.user) { %>
+                                    <form action="/comments/newcomment" id="post-<%= post._id%>-comment-form"method="post">
+                                        <input type="text" name="content" placeholder="Type here to comment.." required>
+                                        <input type="hidden" name="hidden_id" value="<%= post._id%>">
+                                        <input type="submit" value="Add Comment">
+                                    </form>
+                                <% } %>
+                            </div>
+                        </ul>
+                    </div> 
                     </li>`)
                     }
 
@@ -71,7 +81,7 @@
                                 type:'get',
                                 url: $(deleteLink).prop('href'),
                                 success: function(data){
-                                    $(`#post-${ data.data.post_id }`).remove();
+                                    $(`#post-${ data.data.post._id }`).remove();
                                     new Noty({
                                         theme: 'metroui',
                                         text: "Post Deleted",
@@ -93,9 +103,13 @@
     let convertPostsToAjax = function(){
         $('#posts-list-container>ul>li').each(function(){
             let self = $(this);
+            console.log(self)
             let deleteButton = $(' .delete-post-button', self);
             deletePost(deleteButton);
             console.log("post to ajax ");
+            let postID=self.prop("id").split("-")[1];
+            console.log(postID);
+            new CommentClass(postID)
             
         });
     }

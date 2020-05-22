@@ -3,6 +3,7 @@ const Comment = require('../model/comment');
 const postsMailer = require('../mailers/posts_mailer');
 const queue = require('../config/kue');
 const postEmailWorker = require('../workers/post_email_worker');
+const Like = require('../model/like');
 
 module.exports.posts = async function(req,res)
 {
@@ -26,7 +27,8 @@ module.exports.posts = async function(req,res)
          
          return res.status(200).json({
             data:{
-               post:post
+               post:post,
+               postID:post._id
             },
             message: "Post is Created !!" 
          });
@@ -52,6 +54,13 @@ module.exports.destroy = async function(req, res){
          
       if(post.user == req.user.id)
       {
+            // delete the associated likes for post
+         await Like.deleteMany({likeable: post, onModel: 'Post'});
+
+         // delete the associated likes for comment
+         await Like.deleteMany({_id: {$in: post.comments}});
+
+
          post.remove();
 
          await Comment.deleteMany({post :req.params.id});

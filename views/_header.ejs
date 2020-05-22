@@ -4,7 +4,7 @@
         <!-- <img src="/Logo/output-onlinepngtools (1).png" alt="Connect-Us"> -->
         <ul id="list">
             <% if (locals.user) { %>
-                    <a id="link" href="/users/profile"><%= user.name %></a> &nbsp;
+                    <a id="link" href="/users/profile/<%= user.id%>"><%= user.name %></a> &nbsp;
                     <a id="link" href="/users/sign-out">Sign Out</a>
                 
             <% }else{ %>
