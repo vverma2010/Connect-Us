@@ -18,3 +18,6 @@ const friendshipSchema = new mongoose.Schema({
 
 const Friendship = mongoose.model('Friendship', friendshipSchema);
 module.exports = Friendship;
+//i think sir explained in the video? or not
+// Sir just gave hint that it'll work similar to likes.. and we have to make "add friend" button toggle..!! //okay u made likes? Yes.. but that "class part" was copied !! okay okay your number?
+// 8595492739

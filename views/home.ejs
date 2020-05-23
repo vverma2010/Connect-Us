@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="/css/home.css">
+        <link rel="stylesheet" href="/css/chatbox.css">
         <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/0691d296c8.js" crossorigin="anonymous"></script>
         <title>
@@ -43,6 +44,7 @@
     
                 </section>    
             </section>
+            <%- include('_chatbox') -%>
            
         </div>
         <script src="/js/home_comments.js"></script>
@@ -56,5 +58,12 @@
                 let toggleLike = new ToggleLike(self);
             });
         </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha256-bQmrZe4yPnQrLTY+1gYylfNMBuGfnT/HKsCGX+9Xuqo=" crossorigin="anonymous"></script>
+        <script src="/js/chat_engine.js"></script>
+        <% if(locals.user) { %> 
+            <script>
+                new ChatEngine('user-chat-box','<%= locals.user.email %>')
+            </script>
+        <%} %>
     </body>
 </html>

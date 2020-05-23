@@ -14,6 +14,12 @@ const flash = require('connect-flash');
 const customWare = require('./config/middleware');
 const passportJwt = require('./config/passpost-jwt-strategy');
 const passportGoogle = require('./config/passport-google-oauth2-strategy');
+// setup for chat server to be used with socket.io
+const chatServer = require('http').Server(app);
+const chatSockets = require('./config/chat_socket').chatSockets(chatServer); 
+// the 'chatSockets' used second time is the function used in chat_socket.js
+chatServer.listen(5000);
+console.log('Chat server is running on port 5000');
 app.use(sassMiddleware({
     src: './assets/scss',
     dest: './assets/css',
