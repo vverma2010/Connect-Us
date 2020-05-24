@@ -22,7 +22,7 @@ ul {
   margin: 10px;
   list-style: none; }
 
-#post {
+.post {
   background-color: #131419;
   position: relative;
   padding: 15px;

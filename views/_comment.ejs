@@ -19,10 +19,13 @@
             <% } %>
         </small>
         &nbsp;
-        <% if(locals.user && locals.user.id == post.user.id ) { %>
-            <small>
-                <a class="delete-comment-button" href="/comments/destroy/<%= comment.id%>">Delete</a>
-            </small>
+        <% if(locals.user) {%>
+            <% if(locals.user.id==comment.user.id || locals.user.id == post.user ) { %>
+                <small>
+                    <a class="delete-comment-button" href="/comments/destroy/<%= comment.id%>">Delete</a>
+                </small>
+            <% } %>
         <% } %>
+      
     </p>
 </li>

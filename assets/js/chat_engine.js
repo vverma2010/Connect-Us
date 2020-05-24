@@ -16,13 +16,14 @@ class ChatEngine
     connectionHandler()
     {
         let self = this;
+        console.log(this.userEmail);
         this.socket.on('connect', function(){
             console.log('Connection established using sockets...!!');
 
 
             self.socket.emit('join_room', {
                 user_email: self.userEmail,
-                chatroom: 'codeial'
+                chatroom: 'Connectus'
             });
 
             self.socket.on('user_joined',function(data){
@@ -40,12 +41,12 @@ class ChatEngine
                 self.socket.emit('send_message',{
                     message: msg,
                     user_email: self.userEmail,
-                    chatroom: 'codeial'
+                    chatroom: 'Connectus'
                 });
             }
         });
         self.socket.on('recieve_message',function(data){
-            console.log('Message Recieved',data.message);
+                console.log('Message Recieved',data.message);
 
             let newMessage = $('<li>');
 
@@ -64,6 +65,7 @@ class ChatEngine
             }));
 
             newMessage.addClass(messageType);
+            console.log(newMessage);
             $('#chat-message-list').append(newMessage);
         });
     }

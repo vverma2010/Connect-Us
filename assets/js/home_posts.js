@@ -55,16 +55,15 @@
                             </small>
                         </p>
                         <div id="post-${ post._id}-comment-list">
-                        <ul >
-                            
+                        <ul>
                             <div id="post-comments">
-                                <% if(locals.user) { %>
-                                    <form action="/comments/newcomment" id="post-<%= post._id%>-comment-form"method="post">
+                              
+                                    <form action="/comments/newcomment" id="post-${ post._id}-comment-form"method="post">
                                         <input type="text" name="content" placeholder="Type here to comment.." required>
-                                        <input type="hidden" name="hidden_id" value="<%= post._id%>">
+                                        <input type="hidden" name="hidden_id" value="${post._id}">
                                         <input type="submit" value="Add Comment">
                                     </form>
-                                <% } %>
+                        
                             </div>
                         </ul>
                     </div> 
@@ -81,7 +80,8 @@
                                 type:'get',
                                 url: $(deleteLink).prop('href'),
                                 success: function(data){
-                                    $(`#post-${ data.data.post._id }`).remove();
+                                    console.log(data.data.post_id);
+                                    $(`#post-${ data.data.post_id }`).remove();
                                     new Noty({
                                         theme: 'metroui',
                                         text: "Post Deleted",

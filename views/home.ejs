@@ -45,7 +45,7 @@
                 </section>    
             </section>
             <%- include('_chatbox') -%>
-           
+
         </div>
         <script src="/js/home_comments.js"></script>
         <script src="/js/home_posts.js"></script>
@@ -60,10 +60,12 @@
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha256-bQmrZe4yPnQrLTY+1gYylfNMBuGfnT/HKsCGX+9Xuqo=" crossorigin="anonymous"></script>
         <script src="/js/chat_engine.js"></script>
+
         <% if(locals.user) { %> 
             <script>
                 new ChatEngine('user-chat-box','<%= locals.user.email %>')
+                
             </script>
-        <%} %>
+        <% } %>
     </body>
 </html>

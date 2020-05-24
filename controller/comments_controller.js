@@ -53,8 +53,9 @@ module.exports.destroy = async function(req,res){
     try
     {
         let comment = await Comment.findById(req.params.id);
+        let post=await Post.findById(comment.post);
 
-            if(comment.user == req.user.id){
+            if(comment.user == req.user.id || req.user.id==post.user){
                 
                 let postId = comment.post;
                 comment.remove();
@@ -63,16 +64,16 @@ module.exports.destroy = async function(req,res){
                 
                 // delete the likes of the comment
                 await Like.deleteMany({likeable: comment._id, onModel: 'Comment'});
-                if(req.xhr){
+              
                     return res.status(200).json({
                         data: {
                             comment_id: req.params.id
                         },
                         message:"Comment Deleted"
                     })
-            }
-                req.flash('success', 'Comment is deleted');
-                return res.redirect('back');    
+            
+                // req.flash('success', 'Comment is deleted');
+                // return res.redirect('back');    
             }
             else{
                 req.flash('error', 'You cannot delete this comment !!');

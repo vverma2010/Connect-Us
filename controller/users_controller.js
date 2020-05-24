@@ -112,6 +112,7 @@ module.exports.create = function(req, res){
 // signin and create a session for user
 module.exports.createSession = function(req, res){
     req.flash('success','Logged in Successfully');
+    console.log('email',req.body.email);
     // TODO Later
     return res.redirect('/');
 }

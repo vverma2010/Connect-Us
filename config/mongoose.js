@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const URL = "mongodb+srv://mongoDB:mongo@12345@coder-cluster-ywewf.mongodb.net/test?retryWrites=true&w=majority";
-
+const env = require('./environment');
 mongoose.connect(URL,{
     useUnifiedTopology: true,
     useNewUrlParser: true
