@@ -15,6 +15,10 @@ body
         padding: 10px;
     }
 }
+textarea:focus
+{
+    outline: none;
+}
 #others
 {
     display: flex;
@@ -40,7 +44,9 @@ ul
     margin: 20px;
     list-style: none;
     border-radius: 10px;
+    outline: none;
 }
+
 
 input[type="submit"] 
 {
@@ -138,7 +144,7 @@ input[type="text"]
     font-weight: 500;
     font-family: cursive;
 }
-#partition
+.partition
 {
     border-bottom: 1px solid #09FBD3;
     padding-bottom: 5px;

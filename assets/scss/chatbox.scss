@@ -9,7 +9,7 @@
     background-color: #131819;
     padding: 5px;
     border-radius: 8px;
-    box-shadow: 1px 1px 1px 1px gray;
+    // box-shadow: 1px 1px 1px 1px gray;
 }
 #chat-message-list
 {
@@ -26,6 +26,7 @@
     {
         text-align: left;
         padding: 5px;
+        color: #131819;
         span{
             display: inline-block;
             padding: 15px;
@@ -42,6 +43,7 @@
             display: inline-block;
             padding: 15px;
             background-color:lavenderblush;
+            color: #131819;
         }
     }
 }
@@ -49,8 +51,6 @@
 {
     height: 20%;
     width: 100%;
-    // margin: 5px;
-    // padding: 10px;
     padding-left: 10px;
     display: flex;
     flex-direction: row;
@@ -63,6 +63,7 @@
         width: 75%;
         border-radius: 15px;
         background-color: #3a3b3c;
+        color: whitesmoke;
     }
     #send-message
     {
@@ -70,9 +71,22 @@
         margin: 3px;
         width: 15%;
         color: lightsalmon;
-        border-radius: 30px;
-        background: purple;
+        border-radius: 50%;
+        background: transparent;
+        border: 3px;
+        padding: 3px;
+    }
+    #send-message:active
+    {
+        color: #34AA94;
+    }
+    #chat-message-input:focus
+    {
+        outline: none;
+    }
 
-
+    #send-message:focus
+    {
+        outline: none;
     }
 }

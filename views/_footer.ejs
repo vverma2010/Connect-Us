@@ -4,6 +4,8 @@
     </div>
     <div id="menu">
         <a id="item" href="/">Home</a> &nbsp;
+        <% if(locals.user) {%>
         <a id="item" href="/users/profile/<%= user.id%>">Profile</a>
+        <% } %>
     </div>
 </footer>

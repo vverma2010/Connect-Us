@@ -36,8 +36,8 @@
     }
     // method to create a post in DOM
     let newPostDom = function(post){
-        return $(`<li id="post-${post._id}">
-                        <p>
+        return $(`<li id="post-${post._id}" class="post">
+                        <p class="partition">
                                 <small>
                                     <a class="delete-post-button" href="/posts/destroy/${post._id}">Delete</a>
                                 </small>
