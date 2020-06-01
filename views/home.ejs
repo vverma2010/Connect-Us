@@ -1,7 +1,7 @@
 <html>
     <head>
-        <link rel="stylesheet" href="<%= assetPath('css/home.css')%>" type="text/css">
-        <link rel="stylesheet" href="<%= assetPath('css/chatbox.css')%>" type="text/css">
+        <link rel="stylesheet" href="/css/home.css" type="text/css">
+        <link rel="stylesheet" href="/css/chatbox.css" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/0691d296c8.js" crossorigin="anonymous"></script>
         <title>
@@ -17,6 +17,9 @@
             <section id="feed-posts">
                 <% if(locals.user) {%>
                     <div id="new-post">
+                        <div class="image">
+                            <img src="<%= user.avatar%>" alt="" width="35">
+                        </div>
                         <form action="/posts/newpost" id="new-post-form" method="POST">
                             <textarea name="content" cols="30" rows="3" placeholder="What's on your mind,<%= user.name%>?" required></textarea>
                             <input id="post-submit" type="submit" value="Post">
@@ -39,13 +42,22 @@
                 <h2 id="users-title">Users</h2>
                 <% for(let u of all_users){ %>
                     <p>
+                        <img src="<%= u.avatar%>" alt="" width="35">
                         <a id="users" href="/users/profile/<%= u.id%>"><%= u.name%></a> 
                     </p>
                 <% } %>
-                <section id="friends-list">
-                    <h2 id="friends-title">Friends</h2>
-    
-                </section>    
+                <% if(locals.user){%>
+                    <section id="friends-list">
+                        <h2 id="friends-title">Friends</h2>
+                       
+                        <% for(let friend of friends){ %>
+                            <p>
+                                <img src="<%= friend.avatar%>" alt="" width="35">
+                                <a id="users" href="/users/profile/<%= friend._id%>"><%= friend.name%></a> 
+                            </p>
+                        <% } %>
+                    </section>  
+                <% } %>  
             </section>
 
             <%- include('_chatbox') -%>
@@ -54,11 +66,11 @@
         </div>
         
 
-        <script src="<%= assetPath('js/home_comments.js')%>" type="text/javascript"></script>
-        <script src="<%= assetPath('js/home_posts.js')%>" type="text/javascript"></script>
+        <script src="/js/home_comments.js" type="text/javascript"></script>
+        <script src="/js/home_posts.js" type="text/javascript"></script>
        
         <!-- import the script file for toggle likes, also ru it over for the already present posts and comments on the page -->
-        <script src="<%= assetPath('js/toggle_likes.js')%>" type="text/javascript"></script>
+        <script src="/js/toggle_likes.js" type="text/javascript"></script>
         <script>
             $('.toggle-like-button').each(function(){
                 let self = this;
@@ -66,7 +78,7 @@
             });
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha256-bQmrZe4yPnQrLTY+1gYylfNMBuGfnT/HKsCGX+9Xuqo=" crossorigin="anonymous"></script>
-        <script src="<%= assetPath('js/chat_engine.js')%>" type="text/javascript"></script>
+        <script src="/js/chat_engine.js" type="text/javascript"></script>
         <% if(locals.user) { %> 
             <script>
                 new ChatEngine('user-chat-box','<%= locals.user.email %>')

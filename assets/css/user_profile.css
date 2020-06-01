@@ -1,11 +1,137 @@
 body {
   text-align: center;
-  background-color: 131419; }
+  background-color: 131419;
+  text-align: center; }
 
-h1 {
-  color: floralwhite;
-  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF; }
+#dp {
+  margin: 20px;
+  background-color: #1e2324;
+  display: flex;
+  width: 97%;
+  height: 30%;
+  align-items: flex-start;
+  border-radius: 10px; }
+  #dp #display {
+    position: relative;
+    border-radius: 50%;
+    margin: 33.5px;
+    width: 150px; }
+  #dp #username {
+    position: relative;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: teal;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 140px 25px 40px;
+    text-transform: capitalize;
+    text-decoration: underline; }
+  #dp #email {
+    position: relative;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: teal;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 140px 25px 40px;
+    text-decoration: underline; }
 
-p {
-  color: floralwhite;
-  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF; }
+#info {
+  margin: 20px;
+  background-color: #1e2324;
+  display: flex;
+  flex-direction: column;
+  height: -webkit-fill-available;
+  padding: 20px;
+  align-items: flex-start;
+  border-radius: 10px;
+  float: left;
+  margin: 20px;
+  margin-right: 16px;
+  width: 23%; }
+  #info #update-icons {
+    margin: 4px;
+    color: antiquewhite; }
+  #info input {
+    outline: none;
+    color: antiquewhite;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    background-color: #131819;
+    margin: 10px;
+    padding: 7px;
+    border-radius: 7px; }
+  #info input[type=submit] {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 600;
+    background-color: #2f2fe6;
+    cursor: pointer; }
+  #info p {
+    outline: none;
+    color: antiquewhite;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom: groove;
+    background-color: #131819;
+    margin: 10px;
+    padding: 7px;
+    border-radius: 7px; }
+  #info #a {
+    display: inline-flex;
+    flex-direction: row; }
+    #info #a i {
+      margin-top: 20px; }
+  #info #add-friend {
+    text-decoration: none;
+    color: antiquewhite;
+    padding: 5px;
+    padding-left: 30px;
+    margin: 20px;
+    padding-right: 30px;
+    font-weight: 500;
+    font-size: large;
+    background-color: #2f2fe6;
+    cursor: pointer;
+    border-radius: 10px; }
+    #info #add-friend i {
+      margin: 5px; }
+
+#wall {
+  margin: 20px;
+  margin-left: 0px;
+  background-color: #1e2324;
+  display: flex;
+  flex-direction: column;
+  float: right;
+  height: -webkit-fill-available;
+  padding: 20px;
+  align-items: flex-start;
+  border-radius: 10px;
+  width: 68%; }
+  #wall .post {
+    background-color: #131419;
+    position: relative;
+    padding: 15px;
+    margin: 20px;
+    list-style: none;
+    border-radius: 10px;
+    outline: none; }
+    #wall .post .delete-post-button {
+      text-decoration: none;
+      color: #FD1C03; }
+  #wall .partition {
+    border-bottom: 1px solid #09FBD3;
+    padding-bottom: 5px; }
+    #wall .partition .owner {
+      display: flex;
+      flex-direction: row;
+      font-size: 20px;
+      text-transform: capitalize; }
+      #wall .partition .owner .name {
+        margin-top: 6px;
+        color: cornsilk; }

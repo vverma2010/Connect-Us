@@ -2,10 +2,9 @@ const express = require('express');
 const env = require('./config/environment');
 const logger =  require('morgan');
 
-// const rfs = require('rotating-file-stream');
 const cookieParser = require('cookie-parser');
 const app = express();
-require('./config/views_helper')(app);
+// require('./config/views_helper')(app);
 const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
@@ -19,6 +18,7 @@ const flash = require('connect-flash');
 const customWare = require('./config/middleware');
 const passportJwt = require('./config/passpost-jwt-strategy');
 const passportGoogle = require('./config/passport-google-oauth2-strategy');
+const passportGithub = require('./config/passport-github-oauth-strategy');
 // setup for chat server to be used with socket.io
 const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_socket').chatSockets(chatServer); 
@@ -26,8 +26,7 @@ const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
 chatServer.listen(5000);
 console.log('Chat server is running on port 5000');
 const path = require('path');
-if(env.name == 'development')
-{
+
     app.use(sassMiddleware({
         src: path.join(__dirname,env.asset_path,'scss'),
         dest: path.join(__dirname,env.asset_path,'css'),
@@ -35,11 +34,11 @@ if(env.name == 'development')
         outputStyle: 'extended',
         prefix: '/css'
     }));
-}
+
 
 app.use(express.urlencoded());
 app.use(cookieParser());
-
+console.log(env.asset_path)
 app.use(express.static(path.join(__dirname,env.asset_path)));
 // make the upload path available for the browser
 app.use('/uploads', express.static(__dirname + '/uploads'));

@@ -6,9 +6,13 @@
             </small>
         <% } %>
         <br>
-        <%= post.user.name %>
+        <small class="owner">
+            <small class="name">
+                <%= post.user.name %>
+            </small>
+        </small>
         <br>
-        <small>
+        <small style="font-size: 14px;">
             <%= post.content %>
         </small>
         <!-- display the likes of the posts,If the user is logged in then show the link to toggle likes, else.. just show the no. of likes -->

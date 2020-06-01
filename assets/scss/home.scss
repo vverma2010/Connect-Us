@@ -21,10 +21,12 @@ textarea:focus
 }
 #others
 {
+    background-color: #131419;
     display: flex;
     padding: 10px;
+    height: auto;
     width: 28%;
-    border: 1px solid #09FBD3;
+    border-radius: 10px;
 }
 
 ul  
@@ -33,7 +35,6 @@ ul
     padding: 0px;
     margin: 10px;
     list-style: none;
-
 }
 
 .post
@@ -45,6 +46,11 @@ ul
     list-style: none;
     border-radius: 10px;
     outline: none;
+    .delete-post-button
+    {
+        text-decoration: none;
+        color: #FD1C03;
+    }
 }
 
 
@@ -75,7 +81,6 @@ input[type="text"]
     border-radius: 5px;
     padding: 1px 3px;
     color: #fff;
-    // font-size: 18px;
     color:whitesmoke ;
     box-shadow: inset -2px -2px 6px rgba(255,255,255, 0.1),
                 inset 2px 2px 6px rgba(0,0,0, 0.8);
@@ -112,10 +117,21 @@ input[type="text"]
             box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1), inset 2px 2px 6px rgba(0, 0, 0, 0.8);
         }
     }
+    .image
+    {
+        margin: 10px;
+        margin-top: 8px;
+        margin-left: 0px;
+        padding: 10px;
+        padding-right: 0px;
+        padding-left: 0px;
+        padding-top: 5px;
+        img
+        {
+            border-radius: 50%;
+        }
+    }
 }
-
-
-
 
 #post-submit
 {
@@ -123,17 +139,39 @@ input[type="text"]
 }
 
 #users-list{
+    background-color: #131419;
     display: flex;
     flex-direction: column;
     width: 30%;
     padding: 10px;
-    border: 1px solid #09FBD3;
+    border-radius: 10px;
     height: auto;
+    // margin: 15px;
+    #users-title
+    {
+        margin: 15px;
+    }
+    #friends-title
+    {
+        margin: 15px;
+    }
     #friends-list
     {
+        // margin: 15px;
         display: block;
         border-top: 1px solid #09FBD3;
         width: auto;    
+    }
+    img
+    {
+        border-radius: 50%;
+        margin: 3px;
+        // margin-top: 15px;
+    }
+    p 
+    {
+        display: flex;
+        margin: 15px;
     }
 }
 
@@ -143,10 +181,30 @@ input[type="text"]
     color: whitesmoke;
     font-weight: 500;
     font-family: cursive;
+    margin-top: 8px;
+    margin-left: 5px;
+    text-transform: capitalize;
+    
+}
+#users:hover
+{
+    color: darkturquoise;
 }
 .partition
 {
     border-bottom: 1px solid #09FBD3;
     padding-bottom: 5px;
+    .owner
+    {
+        display: flex;
+        flex-direction: row;
+        font-size: 20px;
+        text-transform: capitalize;
+        .name
+        {
+            margin-top: 6px;
+            color: cornsilk ;
+        }
+    }
 }
 

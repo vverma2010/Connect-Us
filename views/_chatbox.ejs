@@ -1,9 +1,12 @@
 <% if(locals.user) {%>
     <div id="user-chat-box">
         <ul id="chat-message-list">
+            <div class="title">
+                <img src="<%= user.avatar%>" alt="" width="25">
+            </div>
             <li class="others-message">
                 <span>
-                    Other Message
+                    others-message
                 </span>
             </li>
             <li class="self-message">

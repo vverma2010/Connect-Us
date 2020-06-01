@@ -1,6 +1,6 @@
 const Post = require('../model/post');
 const User = require('../model/user');
-
+const Friendship=require('../model/friendship');
 
 
 module.exports.home = async function(req, res){
@@ -20,11 +20,29 @@ module.exports.home = async function(req, res){
         }).populate('likes');
     
         let users = await User.find({});
-
+        let friends=[]
+        if(req.user)
+        {
+            let friendships=await Friendship.find({from_user:req.user._id});
+            console.log("friendhsips",friendships);
+         
+            for(friendship of friendships)
+            {
+                let friend=await User.findById(friendship.to_user);
+                console.log(friend);
+                friends.push(friend);
+            }
+            console.log(friends);
+           
+        }
+        
+        
+       
         return res.render('home', {
             title: "Connect-Us | Home",
             posts:  posts,
-            all_users: users
+            all_users: users,
+            friends:friends,
         });
 
     }catch(err){

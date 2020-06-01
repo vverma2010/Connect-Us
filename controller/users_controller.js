@@ -1,23 +1,22 @@
 const User = require('../model/user');
+const Post = require('../model/post');
+const Comment = require('../model/comment');
+const Like = require('../model/like');
 const fs = require('fs');
 const path = require('path');
 module.exports.profile = async function(req,res)
 {
     let user = await User.findById(req.params.id);
+    let posts = await Post.find({'user':req.params.id});
     return res.render('user_profile' , {
             title: 'Users Profile',
-            profile_user: user
-        });
+            profile_user: user,
+            posts: posts
+    });
 }
 
 module.exports.update = async function(req,res){
-    // if(req.user.id == req.params.id){
-    //     User.findByIdAndUpdate(req.params.id, req.body, function(err,user){
-    //         return res.redirect('back');
-    //     });
-    // }else{
-    //     return res.status(401).send('Unauthorized');
-    // }
+    
     if(req.user.id == req.params.id)
     {
         try

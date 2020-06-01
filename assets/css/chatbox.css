@@ -3,21 +3,24 @@
   bottom: 10px;
   right: 10px;
   border: 1px solid #09FBD3;
-  height: 350px;
+  height: 380px;
   width: 300px;
   background-color: #131819;
-  padding: 5px;
   border-radius: 8px; }
 
 #chat-message-list {
   list-style: none;
-  padding: 10px;
+  padding-top: 0px;
   border-radius: 8px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
-  height: 75%;
-  background-color: #5ae6bc;
+  height: 80%;
   overflow: auto; }
+  #chat-message-list .title {
+    border-bottom: 1px solid wheat; }
+    #chat-message-list .title img {
+      border-radius: 50%;
+      margin: 3px; }
   #chat-message-list .others-message {
     text-align: left;
     padding: 5px;
@@ -26,7 +29,8 @@
       display: inline-block;
       padding: 15px;
       background-color: khaki;
-      color: #131819; }
+      color: #131819;
+      border-radius: 20px; }
   #chat-message-list .self-message {
     text-align: right;
     padding: 5px;
@@ -35,30 +39,33 @@
       display: inline-block;
       padding: 15px;
       background-color: lavenderblush;
-      color: #131819; }
+      color: #131819;
+      border-radius: 20px; }
 
 #chat-message-input-container {
-  height: 20%;
-  width: 100%;
-  padding-left: 10px;
+  height: 13%;
+  width: 95%;
+  padding-left: 5px;
+  padding-top: 10px;
   display: flex;
   flex-direction: row; }
   #chat-message-input-container #chat-message-input {
     height: 50%;
     margin: 3px;
     padding: 5px;
-    width: 75%;
+    width: 80%;
     border-radius: 15px;
     background-color: #3a3b3c;
     color: whitesmoke; }
   #chat-message-input-container #send-message {
     height: 50%;
     margin: 3px;
+    size: 10px;
     width: 15%;
     color: lightsalmon;
     border-radius: 50%;
+    border: none;
     background: transparent;
-    border: 3px;
     padding: 3px; }
   #chat-message-input-container #send-message:active {
     color: #34AA94; }
