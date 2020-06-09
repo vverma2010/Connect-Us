@@ -1,18 +1,19 @@
 <li id="comment-<%= comment._id %>">
     <p>
-      
-        <%= comment.user.name%> 
-       
+        <small 
+        class="comment-name">
+            <%= comment.user.name%>            
+        </small>
         <br>
-        <small style="font-size: 14;">
+        <small class="comment-content">
             <%= comment.content%>
         </small>
         <!-- display the likes of the posts,If the user is logged in then show the link to toggle likes, else.. just show the no. of likes -->
         <br>
-        <small>
+        <small class="comment-like">
             <% if(locals.user) { %>
                 <a class="toggle-like-button" data-likes="<%= comment.likes.length %>" href="/likes/toggle/?id=<%= comment._id%>&type=Comment">
-                    <i class="fas fa-thumbs-up"></i><%= comment.likes.length %>Likes
+                    <i class="fas fa-thumbs-up"></i>&nbsp;<%= comment.likes.length %>Likes
                 </a>
             <% } else { %>
                 <%= comment.likes.length %>Likes

@@ -4,7 +4,7 @@ const logger =  require('morgan');
 
 const cookieParser = require('cookie-parser');
 const app = express();
-// require('./config/views_helper')(app);
+require('./config/views_helper')(app);
 const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
@@ -26,7 +26,9 @@ const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
 chatServer.listen(5000);
 console.log('Chat server is running on port 5000');
 const path = require('path');
-
+const dotenv = require('dotenv').config();
+if(env.name == 'development')
+{
     app.use(sassMiddleware({
         src: path.join(__dirname,env.asset_path,'scss'),
         dest: path.join(__dirname,env.asset_path,'css'),
@@ -34,8 +36,7 @@ const path = require('path');
         outputStyle: 'extended',
         prefix: '/css'
     }));
-
-
+}
 app.use(express.urlencoded());
 app.use(cookieParser());
 console.log(env.asset_path)

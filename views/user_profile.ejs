@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/css/user_profile.css">
+<link rel="stylesheet" href="<%= assetPath('css/user_profile.css') %>">
 
 <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/0691d296c8.js" crossorigin="anonymous"></script>
@@ -37,17 +37,29 @@
         <div id="a">
             <i id="update-icons" class="fas fa-at"></i><p id="others-wall"><%= profile_user.email%></p>
         </div>
-        <a id="add-friend" href="/toggle/friendship/?from=<%= locals.user._id%>&to=<%= profile_user._id%>">Add Friend<i class="fas fa-user-plus"></i></a>
+        <% if (check == true ){%>
+        <a id="add-friend" href="/toggle/friendship/?from=<%= locals.user._id%>&to=<%= profile_user._id%>">Remove Friend<i class="fas fa-user-plus"></i></a>
+        <%} else{%>
+            <a id="add-friend" href="/toggle/friendship/?from=<%= locals.user._id%>&to=<%= profile_user._id%>">Add Friend<i class="fas fa-user-plus"></i></a>
+            <%}%>  
     </div>
 <% } %>
 
-<div id="wall">
-    <div id="posts-list-container">
-   <h1>User Posts</h1>
-   <!-- code for posts -->
-    <% for ( let post of posts) { %>
-       
-    <%= user.post%>
-    <% } %>
-    </div>
+<div id="posts-list-container">
+    <ul class="posts-list-container">
+
+        <% for(post of posts){ %>
+            <!-- included code of post and comment section -->
+            <%- include('_post') -%>
+        <% } %>
+    </ul>
 </div>
+<script src="<%= assetPath('js/home_comments.js') %>" type="text/javascript"></script>
+<script src="<%= assetPath('js/home_posts.js') %>" type="text/javascript"></script>
+<script src="<%= assetPath('js/toggle_likes.js') %>" type="text/javascript"></script>
+<script>
+    $('.toggle-like-button').each(function(){
+        let self = this;
+        let toggleLike = new ToggleLike(self);
+    });
+</script>

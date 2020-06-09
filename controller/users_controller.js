@@ -1,17 +1,34 @@
 const User = require('../model/user');
 const Post = require('../model/post');
 const Comment = require('../model/comment');
+const friend  = require('../model/friendship');
 const Like = require('../model/like');
 const fs = require('fs');
 const path = require('path');
 module.exports.profile = async function(req,res)
 {
     let user = await User.findById(req.params.id);
-    let posts = await Post.find({'user':req.params.id});
+    let posts = await Post.find({'user':req.params.id})
+    .sort('-createdAt')
+    .populate('user')
+    // populate the user for each comment
+    .populate({
+        path: 'comments',
+        populate: {
+            path: 'user likes'
+        }
+    }).populate('likes');
+
+    let friends = await friend.findOne({to_user:req.params.id,from_user:req.user.id});
+    let check  = false;
+    if(friends){
+        check = true;
+    }
     return res.render('user_profile' , {
             title: 'Users Profile',
             profile_user: user,
-            posts: posts
+            posts: posts,
+            check:check
     });
 }
 

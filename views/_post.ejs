@@ -6,33 +6,32 @@
             </small>
         <% } %>
         <br>
-        <small class="owner">
             <small class="name">
+
                 <%= post.user.name %>
             </small>
-        </small>
         <br>
-        <small style="font-size: 14px;">
+        <small class="post-content">
             <%= post.content %>
         </small>
         <!-- display the likes of the posts,If the user is logged in then show the link to toggle likes, else.. just show the no. of likes -->
         <br>
-        <small>
+        <small class="like">
             <% if(locals.user) { %>
                 <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%= post._id%>&type=Post">
-                    <i class="fas fa-thumbs-up"></i><%= post.likes.length %>Likes
+                    <i class="fas fa-thumbs-up"></i>&nbsp;<%= post.likes.length %>Likes
                 </a>
             <% } else { %>
                 <%= post.likes.length %>Likes
             <% } %> 
         </small>
     </p>
-    <div id="post-<%= post._id%>-comment-list">
+    <div class="comment" id="post-<%= post._id%>-comment-list">
         <ul >
             <% for(comment of post.comments){ %>
                 <%- include('_comment') -%>
             <% } %>
-            <div id="post-comments">
+            <div class="comment-box" id="post-comments">
                 <% if(locals.user) { %>
                     <form action="/comments/newcomment" id="post-<%= post._id%>-comment-form"method="post">
                         <input type="text" name="content" placeholder="Type here to comment.." required>

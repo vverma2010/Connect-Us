@@ -42,9 +42,11 @@
                                     <a class="delete-post-button" href="/posts/destroy/${post._id}">Delete</a>
                                 </small>
                             <br>
-                            ${ post.user.name }
+                            <small class="name">
+                                ${ post.user.name }
+                            </small>
                             <br>
-                            <small>
+                            <small class="post-content">
                             ${ post.content}
                             </small>
                             <br>
@@ -72,6 +74,7 @@
 
                     let deletePost = function(deleteLink)
                     {
+                        console.log($(deleteLink))
                         $(deleteLink).click(function(e){
                         
                             e.preventDefault();

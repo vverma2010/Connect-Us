@@ -2,6 +2,7 @@ const fs = require('fs');
 const rfs = require('rotating-file-stream');
 const path = require('path');
 
+
 const logDirectory = path.join(__dirname, '../production_logs');
 fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 
@@ -12,9 +13,9 @@ const accessLogStream = rfs.createStream('access.log', {
 
 const development = {
     name: 'development',
-    asset_path: '/assets',
+    asset_path: './assets',
     session_cookie_key:'blah-blah',
-    db: 'Connect-Us Development',
+    db: 'Connect-Us_Development',
     smtp: {
         service: 'gmail',
         host: 'smtp.gmail.com',
@@ -36,7 +37,10 @@ const development = {
     morgan : {
         mode: 'dev',
         options: {stream: accessLogStream}
-    }
+    },
+    github_client_ID: "1b48631ffdbf833b865f",
+    github_client_Secret: "5187921a292f9870e40366c0487cfad477b52194",
+    github_callback_URL: "http://localhost:8000/users/auth/github/callback"
     
 }
 
@@ -66,8 +70,10 @@ const production = {
     morgan : {
         mode: 'combined',
         options: {stream: accessLogStream}
-    }
+    },
+    github_client_ID: process.env.CONNECTUS_GITHUB_CLIENT_ID,
+    github_client_Secret: process.env.CONNECTUS_GITHUB_CLIENT_SECRET,
+    github_callback_URL: process.env.CONNECTUS_GITHUB_CALLBACK_URL
 }
 
-
-module.exports = eval(process.env.CONNECTUS_ENVIRONMENT)== undefined ? development : eval(process.env.CONNECTUS_ENVIRONMENT);
+module.exports = eval(process.env.NODE_ENV == undefined ? development : eval(process.env.NODE_ENV));
