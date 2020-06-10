@@ -26,7 +26,7 @@ const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
 chatServer.listen(5000);
 console.log('Chat server is running on port 5000');
 const path = require('path');
-const dotenv = require('dotenv').config();
+
 if(env.name == 'development')
 {
     app.use(sassMiddleware({
@@ -39,7 +39,6 @@ if(env.name == 'development')
 }
 app.use(express.urlencoded());
 app.use(cookieParser());
-console.log(env.asset_path)
 app.use(express.static(path.join(__dirname,env.asset_path)));
 // make the upload path available for the browser
 app.use('/uploads', express.static(__dirname + '/uploads'));
