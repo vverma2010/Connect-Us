@@ -37,7 +37,7 @@ if(env.name == 'development')
         prefix: '/css'
     }));
 }
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended:false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname,env.asset_path)));
 // make the upload path available for the browser
