@@ -365,3 +365,5 @@
 [0mGET /users/sign-in [32m200[0m 312.798 ms - 2877[0m
 [0mPOST /users/create-session [36m302[0m 1657.723 ms - 46[0m
 [0mGET / [32m200[0m 819.422 ms - 13783[0m
+[0mGET / [32m200[0m 1006.728 ms - 8575[0m
+[0mGET /favicon.ico [33m404[0m 108.546 ms - 150[0m
