@@ -7,8 +7,8 @@
   "css/user_profile.css": "css/user_profile-bd488dfb5a.css",
   "css/user_sign_in.css": "css/user_sign_in-0775e157d1.css",
   "css/user_sign_up.css": "css/user_sign_up-9e77968132.css",
-  "js/chat_engine.js": "chat_engine-59e4598cf1.js",
-  "js/home_comments.js": "home_comments-aa32c0bea9.js",
-  "js/home_posts.js": "home_posts-e2f4155401.js",
-  "js/toggle_likes.js": "toggle_likes-f6df580b53.js"
+  "js/chat_engine.js":"js/chat_engine-6b16cc820d.js",
+  "js/home_comments.js": "js/home_comments-aa32c0bea9.js",
+  "js/home_posts.js": "js/home_posts-e2f4155401.js",
+  "js/toggle_likes.js" : "js/toggle_likes-f6df580b53.js"
 }
