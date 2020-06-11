@@ -25,8 +25,8 @@ const chatSockets = require('./config/chat_socket').chatSockets(chatServer);
 // the 'chatSockets' used second time is the function used in chat_socket.js
 chatServer.listen(5000);
 console.log('Chat server is running on port 5000');
-const path = require('path');
 
+const path = require('path');
 if(env.name == 'development')
 {
     app.use(sassMiddleware({
