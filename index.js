@@ -23,8 +23,8 @@ const passportGithub = require('./config/passport-github-oauth-strategy');
 const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_socket').chatSockets(chatServer); 
 // the 'chatSockets' used second time is the function used in chat_socket.js
-chatServer.listen(5000);
-console.log('Chat server is running on port 5000');
+chatServer.listen(5001);
+console.log('Chat server is running on port 5001');
 
 const path = require('path');
 if(env.name == 'development')
