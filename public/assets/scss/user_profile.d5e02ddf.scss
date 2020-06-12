@@ -1,0 +1,303 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+body
+{
+
+    text-align: center;
+    background-color: 131419;
+    text-align: center;
+}
+
+#dp
+{
+    margin: 20px;
+    background-color: #1e2324;
+    display: flex;
+    width: 97%;
+    height: 30%;
+    align-items: flex-start;
+    border-radius: 10px;
+    #display
+    {
+        position: relative;
+        border-radius: 50%;
+        margin: 33.5px;
+        width: 150px;
+    }
+    #username
+    {
+        position: relative;
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        background-color: teal;
+        padding: 8px;
+        border-radius: 5px;
+        margin: 140px 25px 40px;
+        text-transform: capitalize;
+        text-decoration: underline  ;
+    }
+    #email
+    {
+        position: relative;
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        background-color: teal;
+        padding: 8px;
+        border-radius: 5px;
+        margin: 140px 25px 40px;
+        text-decoration: underline  ;
+    }
+}
+
+#info
+{
+    margin: 20px;
+    background-color: #1e2324;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+    align-items: flex-start;
+    border-radius: 10px;
+    float: left;
+    margin: 20px;
+    margin-right: 0px;
+    width: 22%;
+    margin-bottom: 10px;
+    #update-icons
+    {
+        margin: 4px;
+        color: antiquewhite;
+    }
+    input
+    {
+        outline: none;
+        color: antiquewhite;
+        border-left: none;
+        border-top: none;
+        border-right: none ;
+        background-color: #131819;
+        margin: 10px;
+        padding: 7px;
+        border-radius: 7px;
+        
+    }
+    input[type=submit]
+    {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: 600;
+        background-color: rgb(47, 47, 230);
+        cursor: pointer;
+    }
+    p
+    {
+        outline: none;
+        color: antiquewhite;
+        border-left: none;
+        border-top: none;
+        border-right: none ;
+        border-bottom:groove;
+        background-color: #131819;
+        margin: 10px;
+        padding: 7px;
+        border-radius: 7px;
+    }
+    #a
+    {
+        display: inline-flex;
+        flex-direction: row;
+        i
+        {
+            margin-top: 20px;
+        }
+    }
+    #add-friend
+    {
+        text-decoration: none;
+        color: antiquewhite;
+        padding: 5px;
+        padding-left: 30px;
+        margin: 20px;
+        padding-right: 30px;
+        font-weight: 500;
+        font-size: large;
+        background-color: rgb(47, 47, 230);
+        cursor: pointer;
+        border-radius: 10px;
+        i
+        {
+            margin: 5px;
+        }
+    }
+}
+
+#posts-list-container
+{
+    margin: 20px;
+    margin-left: 0px;
+    background-color: #1e2324;
+    display: flex;
+    flex-direction: column;
+    float: right;
+    height: -webkit-fill-available;
+    padding: 20px;
+    align-items: flex-start;
+    border-radius: 10px;
+    width: 65%;
+    height: 100vh;
+    overflow-y: auto;
+
+    .posts-list-container
+    {
+        width: 90%;
+        text-align: left;
+        padding: 10px;
+        list-style: none;
+    }
+    .post
+    {
+        display: flex;
+        flex-direction: column;
+        background-color: #131419;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        .partition
+        {
+            border-bottom: 1px solid turquoise;
+            padding-bottom: 5px;
+            color: whitesmoke;
+        }
+        .delete-post-button
+        {
+            color: red;
+            text-decoration: none;
+            padding: 5px;
+        }
+        .name
+        {
+            display: flex;
+            font-size: 28px;
+            margin: 5px;
+            border-bottom: 1px solid rgb(87, 92, 91);
+        }
+        .name img
+        {
+            padding: 3px;
+            border-radius: 50%;
+        }
+        .post-content
+        {
+            margin-top: -15px;
+            margin-bottom: -15px;
+            display: flex;
+            padding: 5px ;
+            margin-left: 15px;
+            font-size: 20px;
+            font-family: cursive;
+            color: wheat;
+        }
+        .like
+        {
+            display: flex;
+            margin-left: 15px;
+        }
+        .like a
+        {
+            text-decoration: none;
+            padding:5px ;
+        }
+        .post ul
+        {
+            list-style: none;
+        }
+        .comment
+        {
+            padding-top: 0px !important;
+            display: flex;
+            flex-direction: column;
+            background-color: #131419;
+            margin: 10px;
+            // padding: 10px;
+            border-radius: 10px;
+        }
+        .comment ul 
+        {
+            list-style: none;
+        }
+        .comment ul li
+        {
+            margin-top: -10px;
+        };
+        .comment-name
+        {
+            color: whitesmoke;
+            display: flex;
+            font-size: 18px;
+            margin: 5px;
+            border-bottom: 1px solid rgb(87, 92, 91);
+        }
+        .comment-name img
+        {
+            padding: 3px;
+            border-radius: 50%;
+        }
+        .comment-content
+        {
+            margin: -20px !important;
+            margin-left: -2px !important;
+            margin-top: 0px;
+            display: flex;
+            padding: 5px ;
+            margin-left: 30px;
+            font-size: 14px;
+            font-family: cursive;
+            color: wheat;
+        }
+        .comment-like a
+        {
+            text-decoration: none;
+        }
+        .comment-box input[type=text]
+        {
+            width: 100%;
+            height: 20px;
+            background: #131419;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            padding: 1px 3px;
+            color: #fff;
+            color:whitesmoke ;
+            box-shadow: inset -2px -2px 6px rgba(255,255,255, 0.1),
+                        inset 2px 2px 6px rgba(0,0,0, 0.8);
+        }
+        .comment-box input[type=submit]
+        {
+            border-radius: 5px;
+            margin: 3px;
+            padding: 3px;
+            background: #131419;
+            color: #FC6E22;
+            align-self: center ;
+            border: none;
+            box-shadow: -2px -2px 6px rgba(255,255,255, 0.1),
+                        2px 2px 6px rgba(0,0,0, 0.8);
+        }
+        .comment-box input[type=submit]:hover
+        {
+            color: #006c9c;
+            margin-top: 3px;
+        }
+    }
+}
+
+
+

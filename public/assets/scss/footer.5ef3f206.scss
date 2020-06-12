@@ -1,0 +1,45 @@
+#footer
+{
+    background-color: transparent;
+    width: 20%;
+    height: 50px;
+    text-align: justify;
+    font-family: 'Comic Neue', cursive;
+    margin-right: 0px;
+    float: left;
+    
+}
+#foot
+{
+    color: whitesmoke;
+    margin-left: 20px;   
+}
+#menu
+{
+    width: 80%;
+    background-color: transparent;
+    float: right;
+    text-align: justify;
+    height: 50px;
+    
+}
+
+#item
+{
+    padding: 10px;
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: 'Comic Neue', cursive;
+}
+
+#item:hover
+{
+    color: darkturquoise;
+    text-decoration: deepskyblue;
+}
+
+footer{
+    position: auto;
+    bottom: 0;
+    width: 100%;
+}
