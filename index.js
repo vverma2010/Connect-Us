@@ -22,9 +22,9 @@ const passportGithub = require('./config/passport-github-oauth-strategy');
 // setup for chat server to be used with socket.io
 const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_socket').chatSockets(chatServer); 
-// the 'chatSockets' used second time is the function used in chat_socket.js
-chatServer.listen(5001);
-console.log('Chat server is running on port 5001');
+// the 'chatSockets' 0sed second time is the function used in chat_socket.js
+chatServer.listen(5000);
+console.log('Chat server is running on port 5000');
 
 const path = require('path');
 if(env.name == 'development')
@@ -93,7 +93,7 @@ app.use(customWare.setflash);
 
 // use express router
 app.use('/',require('./routes'));
-
+//wait
 
 
 app.listen(port,function(err){
@@ -106,3 +106,7 @@ app.listen(port,function(err){
 
 
 });
+///dono port same hone chaiye alag lag ku h?
+
+// 8000 is mai port
+// 5001 is chat seracha acha
