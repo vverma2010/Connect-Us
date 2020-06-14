@@ -7,7 +7,7 @@ exports.newPost = (post) => {
     nodeMailer.transporter.sendMail({
         from: 'connectus2020cu@gmail.com',
         to: post.user.email,
-        subject: 'New Post Pulished',
+        subject: 'New Post Published',
         html: '<h1>Yup,your Post is Published</h1>'
     }, (err,info)=>{
         if(err){
